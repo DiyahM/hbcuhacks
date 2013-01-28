@@ -1,0 +1,9 @@
+set -e
+ 
+gem install bundler
+bundle install --binstubs bin
+createuser -s -e hbcuhacks 
+ 
+rake db:create
+rake db:migrate
+rake db:seed
