@@ -3,8 +3,7 @@ Hbcuhacks::Application.routes.draw do
 
   match "/atl" => redirect("http://startupsathbcus-atl.eventbrite.com/")
   match "/dc" => redirect("http://startupsathbcus-dc.eventbrite.com/")
-  ActiveAdmin.routes(self)
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  match "/sign_up" => redirect("https://docs.google.com/forms/d/1RD3lDULc2ypjS_D7XS6ugQPSLmG3mzNiB7aalqO53lw/viewform")
+  
   root :to => 'pages#index'
 end
