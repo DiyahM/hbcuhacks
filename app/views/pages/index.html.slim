@@ -1,1 +1,30 @@
-h1 #hbcuhacks
+#large_splash
+  center
+    #pic_carousel.carousel.slide style="width:115%;height:605px;overflow:hidden;margin-left:-70px;margin-top:-250px"
+      .carousel-inner
+        .item.active
+          = image_tag "hbcu_hack_auc_1.jpg"
+        .item
+          = image_tag "hbcu_hack_auc_2.jpg"
+        .item
+          = image_tag "hbcu_hack_auc_3.jpg"
+
+    a.carousel-control.left href="#pic_carousel" data-slide="prev" <
+    a.class.carousel-control.right href="#pic_carousel" data-slide="next" >
+
+#about style="background:#330000;display:block;width:115%;color:white;margin-left:-70px;margin-top:-20px;padding:20px"
+  center
+    h4 Hackathons hosted at Historically Black Colleges and Universities.
+    a.btn.btn-warning href="/about" Learn More
+
+- if @upcoming_events != []
+  #upcoming
+    h2 Upcoming Hacks
+    - @upcoming_events.each do |event|
+      a href=event_path(event.id)
+        = time_tag event.start_date, format: '%a %m/%d'
+        |  Replace me with university name or title
+      br
+
+
+

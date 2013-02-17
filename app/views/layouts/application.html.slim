@@ -7,5 +7,20 @@ html
     = csrf_meta_tags
 
   body
-    = yield
+    .nav.navbar-fixed-top style="background:white;border-bottom:#e0e0e0 1px solid"
+      .container
+        = link_to((image_tag "logo-final-250px.png"), "/")
+        #host_button style="float:right;margin:15px 130px"
+          a.btn.btn-success href="/signup" target="blank" Bring HBCUHacks to Your School
+    .container style="margin-top:30px" 
+      = yield
+    .footer
+      center
+        | HBCUhacks is a program by 
+        a href="http://www.blackfounders.com" target="blank"
+          | Black Founders
+        br
+        | Copyright 2013 by Black Founders
+        br
+        = image_tag "bf_logo.png", width: "150px"
 
