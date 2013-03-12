@@ -1,30 +1,46 @@
-#large_splash
-  center
-    #pic_carousel.carousel.slide style="width:130%;height:750px;overflow:hidden;margin-left:-200px;margin-top:-350px"
-      .carousel-inner
-        .item.active
-          = image_tag "hbcu_hack_auc_1.jpg"
-        .item
-          = image_tag "hbcu_hack_auc_2.jpg"
-        .item
-          = image_tag "hbcu_hack_auc_3.jpg"
+section#intro
+  .jumbotron.masthead
+    .container
+      .row
+        .span12
+          #slider.nivoSlider
+            img src="hbcu_hack_auc_1.jpg" data-thumb="hbcu_hack_auc_1.jpg" alt=""
+            img src="hbcu_hack_auc_2.jpg" data-thumb="hbcu_hack_auc_2.jpg" alt="" data-transition="slideInLeft"
+            img src="hbcu_hack_auc_3.jpg" data-thumb="hbcu_hack_auc_3.jpg" alt="" data-transition="slideInLeft"
 
-    a.carousel-control.left href="#pic_carousel" data-slide="prev" <
-    a.class.carousel-control.right href="#pic_carousel" data-slide="next" >
-
-#about style="background:#330000;display:block;width:124%;color:white;margin-left:-170px;margin-top:-20px;padding:20px"
-  center
-    h4 Hackathons hosted at Historically Black Colleges and Universities.
-    a.btn.btn-warning href="/about" Learn More
-
-- if @upcoming_events != []
-  #upcoming
-    h2 Upcoming Hacks
-    - @upcoming_events.each do |event|
-      a href=event_path(event.id)
-        = time_tag event.start_date, format: '%a %m/%d'
-        |  Replace me with university name or title
-      br
+.container
+  .row
+    .span12
+      .tagline
+        .row
+          .span6
+            .tagline_text
+              h2 Hackathons hosted at Historically Black Colleges and Universities
+              .tag_list
+                ul
+                  li Build a mobile and web app in 24 hours
+                  li Bring mentors from top startups to your school
+                  li Designed for all majors - no programming experience required
+          .span6
+            .btn-toolbar.cta
+              a.btn.btn-large.btn-danger href="#" Sign up
+              a.btn.btn-large.btn-success href="#" Sponsor
+#maincontent
+  .container
+    .row
+      .span12
+        .divider
+    .row
+      .span12
+        h3 Upcoming Hackathons
+        - if @upcoming_events != []
+          - @upcoming_events.each do |event|
+            .span3
+              .well.well-primary.box
+                a href=event_path(event.id)
+                  = time_tag event.start_date, format: '%a %m/%d'
+                  |  Replace me with university name or title
+                br
 
 
 
