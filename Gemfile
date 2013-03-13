@@ -6,6 +6,7 @@ gem "meta_search", '>= 1.1.0.pre'
 gem 'pg'
 gem 'slim'
 gem 'bootstrap-sass', '~> 2.2.2.0'
+gem 'thin'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
