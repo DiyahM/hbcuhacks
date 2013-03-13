@@ -1,0 +1,47 @@
+section#subintro
+  .jumbotron.subhead#overview
+    .container
+      .row
+        .span8
+          h3 =@event.title
+section#maincontent
+  .container
+    .row
+      .span4
+        aside
+          .widget
+            h4.heading-success Event Details
+            ul.project-detal
+              li
+                label
+                  | Start : 
+                = time_tag @event.start_date, format: '%A, %B %e, %Y %l:%M %p'
+              - if @event.end_date
+                li
+                  label
+                    | End : 
+                  = time_tag @event.end_date, format: '%A, %B %e, %Y %l:%M %p'
+              - if @event.address
+                li
+                  label
+                    | Address : 
+                  = @event.address
+          - if @event.prizes
+            .widget
+              h4.heading-success Prizes
+              ul.project-details
+                li
+                  = @event.prizes
+
+      .span8
+        article.blog-post
+          .tooltip-demo.headline
+            h4
+              = @event.title
+          .clearfix
+          .well
+            = @event.desc
+            p
+              a.btn.btn-large.btn-success href="#" Register for Event
+            
+		
