@@ -1,46 +1,70 @@
-section#intro
-  .jumbotron.masthead
-    .container
-      .row
-        .span12
-          #slider.nivoSlider
-            img src="hbcu_hack_auc_1.jpg" data-thumb="hbcu_hack_auc_1.jpg" alt=""
-            img src="hbcu_hack_auc_2.jpg" data-thumb="hbcu_hack_auc_2.jpg" alt="" data-transition="slideInLeft"
-            img src="hbcu_hack_auc_3.jpg" data-thumb="hbcu_hack_auc_3.jpg" alt="" data-transition="slideInLeft"
+section#headline style="max-width:100%;height:150px;background:#f5f5f5;"
+  .container
+    .row
+      .span12
+        .tagline
+          .row
+            .span9
+              .tagline_text 
+                h2 Hackathons hosted at Historically Black Colleges and Universities
+            .span3
+              .btn-toolbar.cta
+                a.btn.btn-large.btn-danger href=signup_path Sign up
+                a.btn.btn-large.btn-success href="mailto:founders@blackfounders.com?subject=HBCUHack%20Sponsorship" Sponsor
+
+.jumbotron.masthead style="margin-top:20px"
+  .container
+    .row
+      .span12
+        #slider.nivoSlider
+          img src="hbcu_hack_auc_1.jpg" data-thumb="hbcu_hack_auc_1.jpg" alt=""
+          img src="hbcu_hack_auc_2.jpg" data-thumb="hbcu_hack_auc_2.jpg" alt="" data-transition="slideInLeft"
+          img src="hbcu_hack_auc_3.jpg" data-thumb="hbcu_hack_auc_3.jpg" alt="" data-transition="slideInLeft"
+
+#maincontent style="margin-top:20px"
+  .container
+    .row
+      .span8
+        center
+          h2 What is a hackathon?
+          | A hackathon is an event where individuals collaborate in a short and intense time period
+            (typically 24 to 72 hours) to build a mobile or web application. A typical HBCUHack lasts for about
+            24 hours. Students from all majors are encouraged to attend and bring only an idea and a laptop. 
+            During the event, students form teams and work on an idea with a goal of building an web or mobile. 
+            Mentors are available during the event to help students build their app. We've noticed that our past 
+            winners are often teams that are made up of diverse majors. (ie: computer science, business, journalism,
+            psychology) Programming experience is not required to attend an HBCUHack, but familiarity with basic
+            programming concepts is helpful or joining a team with a student programmer is encouraged.
+          p style="padding:8px;"
+            a href="http://www.drurly.com/blog/2013/02/10/black-founders-hackathon-my-experience/"
+              em
+                | Need more info? Read HBCUHacks - My Experience by Dru Riley
+          
+      .span4
+        h2 Upcoming HBCUHacks
+        ul
+          - if @upcoming_events != []
+            - @upcoming_events.each do |event|
+              li
+                a href=event_path(event.id)
+                  = time_tag event.start_date, format: '%a %m/%d'
+                  |  Replace me with university name or title
+          - else
+            li
+              h4 TBD
 
 .container
   .row
     .span12
-      .tagline
-        .row
-          .span6
-            .tagline_text
-              h2 Hackathons hosted at Historically Black Colleges and Universities
-              .tag_list
-                ul
-                  li Build a mobile and web app in 24 hours
-                  li Bring mentors from top startups to your school
-                  li Designed for all majors - no programming experience required
-          .span6
-            .btn-toolbar.cta
-              a.btn.btn-large.btn-danger href="#" Sign up
-              a.btn.btn-large.btn-success href="#" Sponsor
-#maincontent
-  .container
-    .row
-      .span12
-        .divider
-    .row
-      .span12
-        h3 Upcoming Hackathons
-        - if @upcoming_events != []
-          - @upcoming_events.each do |event|
-            .span3
-              .well.well-primary.box
-                a href=event_path(event.id)
-                  = time_tag event.start_date, format: '%a %m/%d'
-                  |  Replace me with university name or title
-                br
+      .divider
+  .row
+    .span12
+      center
+        h2 Cool Companies Working With Us
+
+      
+
+
 
 
 
