@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 gem 'activeadmin'
-gem 'therubyracer'
 gem "meta_search", '>= 1.1.0.pre'
 gem 'pg'
 gem 'slim'
