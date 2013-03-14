@@ -25,13 +25,13 @@ section#maincontent
                 li
                   label
                     | Address : 
-                  = @event.address
+                  = @event.address.gsub(/\n/, '<br/>').html_safe
           - if @event.prizes
             .widget
               h4.heading-success Prizes
               ul.project-details
                 li
-                  = @event.prizes
+                  = @event.prizes.gsub(/\n/, '<br/>').html_safe
 
       .span8
         article
@@ -39,7 +39,7 @@ section#maincontent
             h4
               = @event.title
           .clearfix
-          = @event.desc
+          = @event.desc.gsub(/\n/, '<br/>').html_safe
           - if @event.registration_url
             p style="margin-top:20px"
               a.btn.btn-large.btn-success href="#{@event.registration_url}" Register for Event
