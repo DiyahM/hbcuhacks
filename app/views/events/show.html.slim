@@ -34,14 +34,24 @@ section#maincontent
                   = @event.prizes
 
       .span8
-        article.blog-post
+        article
           .tooltip-demo.headline
             h4
               = @event.title
           .clearfix
           .well
             = @event.desc
-            p
-              a.btn.btn-large.btn-success href="#" Register for Event
+            - if @event.registration_url
+              p
+                a.btn.btn-large.btn-success href="#{@event.registration_url}" Register for Event
+          - if @event.companies.any?
+            .span8
+              .row
+                .divider
+              .row
+                h5 Sponsoring Companies
+                - @event.companies.each do |company|
+                  .span2
+                    = image_tag company.image_url
             
 		
