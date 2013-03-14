@@ -39,11 +39,10 @@ section#maincontent
             h4
               = @event.title
           .clearfix
-          .well
-            = @event.desc
-            - if @event.registration_url
-              p
-                a.btn.btn-large.btn-success href="#{@event.registration_url}" Register for Event
+          = @event.desc
+          - if @event.registration_url
+            p style="margin-top:20px"
+              a.btn.btn-large.btn-success href="#{@event.registration_url}" Register for Event
           - if @event.companies.any?
             .span8
               .row
