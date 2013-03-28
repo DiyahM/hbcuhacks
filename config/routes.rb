@@ -6,6 +6,7 @@ Hbcuhacks::Application.routes.draw do
 
   match "/atl" => redirect("http://startupsathbcus-atl.eventbrite.com/")
   match "/dc" => redirect("http://startupsathbcus-dc.eventbrite.com/")
+  match "/morgan" => redirect("http://morganhackathon.eventbrite.com/")
   match "/signup" => redirect("https://docs.google.com/forms/d/1RD3lDULc2ypjS_D7XS6ugQPSLmG3mzNiB7aalqO53lw/viewform")
   ActiveAdmin.routes(self)
 
