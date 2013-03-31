@@ -24,31 +24,48 @@ section#headline style="max-width:100%;height:150px;background:#f5f5f5;"
 #maincontent style="margin-top:20px"
   .container
     .row
-      .span8
-        center
-          h2 What is a hackathon?
-          | A hackathon is an event where individuals collaborate in a short and intense time period
-            (typically 24 to 72 hours) to build a mobile or web application. A typical HBCUHack lasts for about
-            24 hours. Students from all majors are encouraged to attend and bring only an idea and a laptop. 
-            During the event, students form teams and work on an idea with a goal of building an web or mobile. 
-            Mentors are available during the event to help students build their app. We've noticed that our past 
-            winners are often teams that are made up of diverse majors. (ie: computer science, business, journalism,
-            psychology) Programming experience is not required to attend an HBCUHack, but familiarity with basic
-            programming concepts is helpful or joining a team with a student programmer is encouraged.
-          p style="padding:8px;"
-            a href="http://www.drurly.com/blog/2013/02/10/black-founders-hackathon-my-experience/"
-              em
-                | Need more info? Read HBCUHacks - My Experience by Dru Riley
+      .span7.tagline_text
+		  h2 What is a hackathon?
+		  | A hackathon is an event where individuals collaborate in a short and intense time period
+			(typically 24 to 72 hours) to build a mobile or web application. A typical HBCUHack lasts for about
+			24 hours. During the event, students form teams and work on an idea with a goal of building a web or mobile app.  
+		  br
+		  br
+		  h2 What if I don't know how to code?
+		  | Come anyway! Students from all majors are encouraged to attend and bring only an idea and a laptop. Programming 
+			experience is not required, but familiarity with basic programming concepts is 
+			helpful or joining a team with a student programmer is encouraged. Mentors will also available during the event to help you build your app. Besides, having a team with diverse backgrounds helps. We've noticed that our past winners are often teams that are made up of diverse majors. (ie: computer science, business, journalism, psychology).
+		  br
+		  br
+		  h2 What's an HBCUHack really like?
+		  | Read 
+		  a href="http://www.drurly.com/blog/2013/02/10/black-founders-hackathon-my-experience/"
+			| HBCUHacks - My Experience
+		  | . It's a blog post by Dru Riley who attended the very first HBCUHack in Atlanta, GA. 
           
-      .span4
+      .span5.upcoming_events
         h2 Upcoming HBCUHacks
-        ul
+		ul
           - if @upcoming_events != []
             - @upcoming_events.each do |event|
-              li
-                a href=event_path(event.id)
-                  = time_tag event.start_date, format: '%m/%d'
-                  |  #{event.title}
+			  li
+				div.event_date
+				  = time_tag event.start_date, format: '%b %d'
+				div.event_details
+				  - if event.logo_url != ''
+				    div.event_details_logo
+					  a.event_link href=event_path(event.id)
+					    = image_tag event.logo_url
+				  - else
+					|
+				  div.event_details_location
+					a.event_link href=event_path(event.id)
+					  | #{event.title}
+					br
+					| #{event.address.gsub("\n", "<br />").html_safe} 
+				  div.event_details_signup
+					a.btn.btn-success href=signup_path
+					  |  Sign up
           - else
             li TBA
 
@@ -66,11 +83,3 @@ section#headline style="max-width:100%;height:150px;background:#f5f5f5;"
         .span3
           a href=company.company_url
             = image_tag company.image_url
-
-
-      
-
-
-
-
-

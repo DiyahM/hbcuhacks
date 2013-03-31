@@ -1617,8 +1617,6 @@ img.alignright{
 	margin-left:5px;
 }
 
-
-
 /*margin vary*/
 .mtopbottom20 {
 	margin:20px 0 20px 0;
@@ -1635,13 +1633,30 @@ img.alignright{
 .marginlr10 {
 	margin:0 10px 0 10px;
 }
-/* custom queries */
 
-@media only screen and (min-width: 768px) and (max-width: 959px) {
+/* custom styles */
+.upcoming_events {}
+.upcoming_events ul{list-style: none;margin-left:0px;}
+.upcoming_events ul li{position: relative;overflow: auto;margin-top: 15px;border-top: 1px #999 dashed;padding-top: 10px;}
+.upcoming_events div.event_date {float: left;margin-right: 10px;background: #ec4f13;  color: #fff;  border: none;padding: 10px;line-height: 25px;font-size: 18px;}
+.upcoming_events div.event_details {position: relative;overflow: auto;}
+.upcoming_events a.event_link {color: #ec4f13;}
+.upcoming_events div.event_details_logo {float: left;margin-right: 10px;}
+.upcoming_events div.event_details_logo img {width: 75px;max-height: 75px;max-width: 75px;}
+.upcoming_events div.event_details_location {float: left;margin-right: 10px;max-width: 150px;}
+.upcoming_events div.event_details_signup {margin-right: 10px;
+text-align: center;}
+.upcoming_events div.event_details_signup a {color: #fff;}
+
+/* custom queries */
+@media only screen and (min-width: 768px) and (max-width: 979px) {
 	.navbar .navbar-inner .container {
 		margin-left: 20px;
 		margin-right: 20px;
 	}
+
+	.upcoming_events div.event_details_logo {display:none;}
+	.upcoming_events div.event_details_signup {display:none;}
 
 }
 
@@ -1651,30 +1666,30 @@ img.alignright{
 		margin-right: 20px;
 	}
 	
-  section#subintro {	
-    padding-left: 20px;
-    padding-right: 20px;
-	margin-top:0;
-    margin-left: -20px;
-    margin-right: -20px;
-}  
+	section#subintro {	
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-top:0;
+		margin-left: -20px;
+		margin-right: -20px;
+	}  
 
-ul.portfolio-area li {
-	width:100%;
-}
+	ul.portfolio-area li {
+		width:100%;
+	}
 
- .tagline, section#intro {	
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: -20px;
-    margin-right: -20px;
-} 
-  section#bottom {	
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: -20px;
-    margin-right: -20px;
-}  
+	 .tagline, section#intro {	
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-left: -20px;
+		margin-right: -20px;
+	} 
+	  section#bottom {	
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-left: -20px;
+		margin-right: -20px;
+	}  
 
 	.verybottom {
 		padding-left: 20px;
@@ -1709,10 +1724,10 @@ ul.portfolio-area li {
 	  line-height:30px;
     }
 	
-.cta {
-	margin-top:20px;
-	text-align:center;
-}	
+	.cta {
+		margin-top:20px;
+		text-align:center;
+	}
 	
 }
 
@@ -1729,18 +1744,21 @@ ul.portfolio-area li {
 	  width:100%;
 
     }
-.cta {
-	margin-top:20px;
-	text-align:center;
-}	
+	.cta {
+		margin-top:20px;
+		text-align:center;
+	}	
 
-.cta a {
-	margin-top:20px;
-	margin-bottom:10px;
-	text-align:center;
-}
+	.cta a {
+		margin-top:20px;
+		margin-bottom:10px;
+		text-align:center;
+	}
 	.verybottom p {
 		text-align:center;
 	}
+
+	.upcoming_events div.event_details_logo {display:none;}
+	.upcoming_events div.event_details_signup {display:none;}
 
 }
